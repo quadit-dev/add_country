@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template id="contactus_form_country" name="Contact country" inherit_id="website.contactus" customize_show="True">
-        <xpath expr="//div[@name='Company']" position="after">
+        <xpath expr="//div[hasclass('form-group','row','form-field','o_website_form_required')]" position="after">
             <div class="form-group row form-field o_website_form_required_custom">
-                <label  name='country_id' class="col-lg-3 col-md-4 col-form-label" for="country_id">Pais de Origen</label>
+                <label  name='country_id' class="col-lg-3 col-md-4 col-form-label" for="country_id">Country</label>
                 <div class="col-lg-7 col-md-8">
-                     <select name="country_id" class="form-control" data-placeholder="Select a country" required="required">
+                     <select name="country_id" class="form-control" data-placeholder="Select a country..." required="required">
                         <t t-foreach="countries" t-as="country">
-                            <option t-att-value="country.id" t-att-selected="contract.employee_id.country_of_birth.name == country.name"><t t-esc="country.name"/>
+                            <option t-att-value="country.id" t-att-selected="country.name">
+                                <t t-esc="country.name"/>
                             </option>
                         </t>
                     </select>
