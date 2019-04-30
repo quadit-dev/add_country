@@ -16,7 +16,7 @@ class WebsiteForm(WebsiteForm):
         Country = request.env['res.country']
         countries = Country.search([])
         request.params['countries'] = countries
-        return http.request.render('add_country.contactus_form_country',
+        return http.request.render('website_add_country.contactus_form_country',
                                    {'countries': countries})
 
     def insert_record(self, request, model, values, custom, meta=None):
